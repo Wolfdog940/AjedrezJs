@@ -1,5 +1,5 @@
-import Piece from "../pieceClass";
-import { data } from "../../../../data/chessPieces";
+import Piece from "../pieceClass.mjs";
+import { data } from "../../../../Data/chessPieces.mjs";
 
 
 export default class Pawn extends Piece {
