@@ -19,14 +19,24 @@ body {
 }
 
 .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100px;
     height: 100px;
 }
 
 .white {
     background-color: #fff;
+    font-size:100px;
+    
+    
 }
 
 .black {
-    background-color: #000;
+    background-color: #000000;
+    font-size:100px;
+    color:white;
+    
 }
+
