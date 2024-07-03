@@ -1,11 +1,4 @@
-import Board from "./classes/boardClass/boardClass.mjs";
-import Pawn from "./classes/piece/pieces/pawn.mjs";
-import Rook from "./classes/piece/pieces/rook.mjs";
-import Knight from "./classes/piece/pieces/knight.mjs";
-import Bishop from "./classes/piece/pieces/Bishop.mjs";
-import Queen from "./classes/piece/pieces/queen.mjs";
-import King from "./classes/piece/pieces/king.mjs";
-
+import { Pawn,Rook,King,Knight,Queen,Bishop,Board} from "./classes/piece/pieces/index.mjs";
 
 //Crear tablero
 const newBoard = new Board();
