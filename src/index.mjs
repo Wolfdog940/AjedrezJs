@@ -1,4 +1,9 @@
+import Piece from "./classes/piece/pieceClass.mjs";
 import { Pawn,Rook,King,Knight,Queen,Bishop,Board} from "./classes/piece/pieces/index.mjs";
+
+//Traerme todas las celdas
+const cells = document.querySelectorAll('.cell');
+let pieceName = '';
 
 //Crear tablero
 const newBoard = new Board();
@@ -20,10 +25,25 @@ const blackKing = new King('black','8',['D8'])
 
 //Crear array para almadcenar todas las nuevas piezas
 const allPieces = [withePawns, blackPawns,whiteRook,blackRook,whiteKnight,blackKnight,whiteBishop,blackBishop,whiteQueen,blackQueen,blackKing,whiteKing];
-// Ejecutar metodo 
+// Ejecutar metodo para poner fichas en el tablero
 allPieces.forEach(pieces => {
-    newBoard.placeChessPieces(pieces.pieceName, pieces.initialRow, pieces.initialColumnArray);
+    newBoard.placeChessPieces(pieces.pieceName, pieces.initialRow, pieces.initialColumnArray,pieces.constructor.name);
+    console.log(pieces.constructor.name)
+    pieceName = pieces.constructor.name;
 });
+
+
+
+//Ejecutar metodo para ...ç
+
+
+const elementosInteresantes = document.querySelectorAll('.elemento-interesante');
+
+// Iterar sobre cada elemento y agregar el event listener para 'mouseover'
+document.addEventListener('click',(event)=>{
+    pieceName = event.target.classList[2]
+    newBoard.isValidMoveForPiece(pieceName);
+})
 
 
 
