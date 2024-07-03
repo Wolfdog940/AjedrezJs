@@ -32,18 +32,13 @@ allPieces.forEach(pieces => {
     pieceName = pieces.constructor.name;
 });
 
-
-
-//Ejecutar metodo para ...ç
-
-
-const elementosInteresantes = document.querySelectorAll('.elemento-interesante');
-
-// Iterar sobre cada elemento y agregar el event listener para 'mouseover'
+//Ejecutar metodo para
 document.addEventListener('click',(event)=>{
     pieceName = event.target.classList[2]
-    newBoard.isValidMoveForPiece(pieceName);
+    newBoard.isValidMoveForPiece(pieceName,event.target.id);
+    console.log(event)
 })
+
 
 
 

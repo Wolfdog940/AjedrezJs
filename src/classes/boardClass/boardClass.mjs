@@ -22,11 +22,29 @@ export default class Board {
         
             
     }
-    isValidMoveForPiece( piece,startingPosition, initialState, finalState ){
+     isValidMoveForPiece(piece, startingPosition) {
+        // startingPosition, initialState, finalState
+        let initialSquare = document.getElementById(startingPosition);
+        let initialSquareId = initialSquare.id;
+        let initialSquareArr = initialSquareId.split('');
+        let nextSquareNumber = parseInt(initialSquareArr[1]) + 1;
+        let nextSquareComplete = initialSquareArr[0] +nextSquareNumber
 
-        switch(piece){
+        switch (piece) {
             case 'Pawn':
-                console.log('es un peon');
+                if (initialSquareId === startingPosition) {
+                    
+                    let allowNormalMovement = [nextSquareComplete];
+                    let finalSquarePosition = document.getElementById(allowNormalMovement);
+                    let initialSquarePosition = document.getElementById(initialSquareId);
+                    finalSquarePosition.style.backgroundColor = 'lime'
+                    initialSquarePosition.style.background = 'green'
+                    console.log(initialSquare)
+
+                }
+                else {
+                    console.log('No esta en su posicion inicial')
+                }
                 break;
             case 'Rook':
                 console.log('es una torre');
@@ -44,7 +62,6 @@ export default class Board {
                 console.log('es un Rey');
                 break;
         }
-
     }
     
 
