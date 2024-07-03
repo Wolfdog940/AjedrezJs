@@ -9,15 +9,14 @@ export default class Board {
 
             columnsArray.forEach(square => {
                 //square.innerHtml = piece;
+                
+                
                 let elements =document.getElementById(square)
                 let elementId = elements.id
-                //if(elementId.includes())
                 elements.innerHTML = piece
-                
-                
-                
-                console.log(elements.id)
-                
+                //elements.style.color = 'white'
+                console.log(elements)
+                 
 
             });
         }
