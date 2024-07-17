@@ -1,44 +1,61 @@
-import Piece from "./classes/piece/pieceClass.mjs";
-import { Pawn,Rook,King,Knight,Queen,Bishop,Board} from "./classes/piece/pieces/index.mjs";
+// Importaciones
+import { Pawn, Rook, King, Knight, Queen, Bishop, Board } from "./classes/piece/pieces/index.mjs";
 
-//Traerme todas las celdas
-const cells = document.querySelectorAll('.cell');
-let pieceName = '';
-
-//Crear tablero
+// Crear tablero
 const newBoard = new Board();
 
-//Crear piezas
-const withePawns = new Pawn('white','2',['A2','C2','E2','G2','B2','D2','F2','H2']);
-const blackPawns = new Pawn('black','7',['A7','C7','E7','G7','B7','D7','F7','H7']);
-const whiteRook = new Rook ('white','1',['A1','H1']);
-const blackRook = new Rook ('black','8',['A8','H8']);
-const whiteKnight = new Knight('white','1',['B1','G1']);
-const blackKnight = new Knight('black','8',['B8','G8']);
-const whiteBishop = new Bishop('white','1',['C1','F1']);
-const blackBishop = new Bishop('black','8',['C8','F8']);
-const whiteQueen = new Queen('white','1',['D1']);
-const blackQueen = new Queen('black','8',['E8']);
-const whiteKing = new King('white','1',['E1']);
-const blackKing = new King('black','8',['D8'])
+// Crear piezas
+// Peones blancos
+const withePawnOne = new Pawn('white', '2', 'A2', 'A2');
+const withePawnTwo = new Pawn('white', '2', 'C2', 'C2');
+const withePawnThree = new Pawn('white', '2', 'E2', 'E2');
+const withePawnFour = new Pawn('white', '2', 'G2', 'G2');
+const withePawnFive = new Pawn('white', '2', 'B2', 'B2');
+const withePawnSix = new Pawn('white', '2', 'D2', 'D2');
+const withePawnSeven = new Pawn('white', '2', 'F2', 'F2');
+const withePawnEight = new Pawn('white', '2', 'H2', 'H2');
 
+// Peones negros
+const blackPawnOne = new Pawn('black', '7', 'A7', 'A7');
+const blackPawnTwo = new Pawn('black', '7', 'C7', 'C7');
+const blackPawnThree = new Pawn('black', '7', 'E7', 'E7');
+const blackPawnFour = new Pawn('black', '7', 'G7', 'G7');
+const blackPawnFive = new Pawn('black', '7', 'B7', 'B7');
+const blackPawnSix = new Pawn('black', '7', 'D7', 'D7');
+const blackPawnSeven = new Pawn('black', '7', 'F7', 'F7');
+const blackPawnEight = new Pawn('black', '7', 'H7', 'H7');
 
-//Crear array para almadcenar todas las nuevas piezas
-const allPieces = [withePawns, blackPawns,whiteRook,blackRook,whiteKnight,blackKnight,whiteBishop,blackBishop,whiteQueen,blackQueen,blackKing,whiteKing];
-// Ejecutar metodo para poner fichas en el tablero
-allPieces.forEach(pieces => {
-    newBoard.placeChessPieces(pieces.pieceName, pieces.initialRow, pieces.initialColumnArray,pieces.constructor.name);
-    console.log(pieces.constructor.name)
-    pieceName = pieces.constructor.name;
+// Array de todas las piezas
+const allPieces = [
+    withePawnOne,
+    withePawnTwo,
+    withePawnThree,
+    withePawnFour,
+    withePawnFive,
+    withePawnSix,
+    withePawnSeven,
+    withePawnEight,
+    blackPawnOne,
+    blackPawnTwo,
+    blackPawnThree,
+    blackPawnFour,
+    blackPawnFive,
+    blackPawnSix,
+    blackPawnSeven,
+    blackPawnEight
+];
+
+// Ejecutar método para colocar piezas en el tablero
+newBoard.executePlaceChessPieces(allPieces);
+
+// Ejecutar método para ubicar las piezas en el tablero
+newBoard.pieceLocationOnBoard(allPieces);
+
+// Ejecutar método para validar y mover las piezas
+allPieces.forEach(piece => {
+    newBoard.executeIsValidMoveMethod(piece.initialPosition, piece.actualPosition);
 });
 
-//Ejecutar metodo para
-document.addEventListener('click',(event)=>{
-    pieceName = event.target.classList[2]
-    newBoard.isValidMoveForPiece(pieceName,event.target.id);
-    console.log(event)
-})
 
 
-
-
+ 

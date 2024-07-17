@@ -24,19 +24,29 @@ body {
     align-items: center;
     width: 100px;
     height: 100px;
+    
+    
+    
 }
 
 .white {
     background-color: #fff;
     font-size:100px;
+    box-sizing: border-box;
+
+    
     
     
 }
 
 .black {
-    background-color: #4b4848;
+    background-color:rgba(0, 0, 0, 0.158);
     font-size:100px;
+    box-sizing: border-box;
+    
+   
 
 
 }
+
 

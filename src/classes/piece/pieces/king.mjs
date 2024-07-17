@@ -3,10 +3,10 @@ import { data } from "../../../../Data/chessPieces.mjs";
 
 
 export default class King extends Piece {
-    constructor(color, initialRow, initialColumnArray ){
+    constructor(color, initialRow, initialPosition ){
         
         const pieceName = color === 'white'? data?.whiteKing: data?.blackKing
-        super(color, pieceName, initialRow, initialColumnArray)
+        super(color, pieceName, initialRow, initialPosition)
     }
     
 }

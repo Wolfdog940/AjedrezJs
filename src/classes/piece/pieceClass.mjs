@@ -1,13 +1,13 @@
 
 export default class Piece {
-    constructor( color, pieceName, initialRow, initialColumnArray ){
+    constructor( color, pieceName,initialRow, initialPosition, actualPosition){
         this.color = color;
         this.name = this.name
         this.pieceName = pieceName;
         this.initialRow = initialRow;
-        this.initialColumnArray = initialColumnArray;
+        this.initialPosition = initialPosition;
         this.hasMove = false;
-        
+        this.actualPosition = actualPosition
        
     }
     blackOrWhite(){
