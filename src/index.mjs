@@ -1,76 +1,82 @@
 // Importaciones
+
 import { Pawn, Rook, King, Knight, Queen, Bishop, Board } from "./classes/piece/pieces/index.mjs";
+import {Data} from "../Data/chessPieces.mjs"
+import Piece from "./classes/piece/pieceClass.mjs";
 
 // Crear tablero
 const newBoard = new Board();
+//const newPiece = new Piece();
 
 // Crear piezas
 // Peones blancos
-const withePawnOne = new Pawn('white', '2', 'A2', 'A2');
-const withePawnTwo = new Pawn('white', '2', 'C2', 'C2');
-const withePawnThree = new Pawn('white', '2', 'E2', 'E2');
-const withePawnFour = new Pawn('white', '2', 'G2', 'G2');
-const withePawnFive = new Pawn('white', '2', 'B2', 'B2');
-const withePawnSix = new Pawn('white', '2', 'D2', 'D2');
-const withePawnSeven = new Pawn('white', '2', 'F2', 'F2');
-const withePawnEight = new Pawn('white', '2', 'H2', 'H2');
+//name, color, initialRow, initialPosition,actualPosition,symbol
+const withePawnOne = new Pawn( Data.name.Pawn, Data.color.white, Data.initialRow.pawn.whitePawns, Data.initialPosition.pawns.withePawnOne,  Data.icons.whitePawn);
+const withePawnTwo = new Pawn(Data.name.Pawn, Data.color.white, Data.initialRow.pawn.whitePawns, Data.initialPosition.pawns.withePawnTwo, Data.icons.whitePawn);
+const withePawnThree = new Pawn(Data.name.Pawn, Data.color.white, Data.initialRow.pawn.whitePawns, Data.initialPosition.pawns.withePawnThree,  Data.icons.whitePawn);
+const withePawnFour = new Pawn(Data.name.Pawn, Data.color.white, Data.initialRow.pawn.whitePawns, Data.initialPosition.pawns.withePawnFour,  Data.icons.whitePawn);
+const withePawnFive = new Pawn(Data.name.Pawn, Data.color.white, Data.initialRow.pawn.whitePawns, Data.initialPosition.pawns.withePawnFive,  Data.icons.whitePawn);
+const withePawnSix = new Pawn(Data.name.Pawn, Data.color.white, Data.initialRow.pawn.whitePawns, Data.initialPosition.pawns.withePawnSix,  Data.icons.whitePawn);
+const withePawnSeven = new Pawn(Data.name.Pawn, Data.color.white, Data.initialRow.pawn.whitePawns, Data.initialPosition.pawns.withePawnSeven,  Data.icons.whitePawn);
+const withePawnEight = new Pawn(Data.name.Pawn, Data.color.white, Data.initialRow.pawn.whitePawns, Data.initialPosition.pawns.withePawnEight,  Data.icons.whitePawn);
 
 // Peones negros
 
-const blackPawnOne = new Pawn('black', '7', 'A7', 'A7');
-const blackPawnTwo = new Pawn('black', '7', 'C7', 'C7');
-const blackPawnThree = new Pawn('black', '7', 'E7', 'E7');
-const blackPawnFour = new Pawn('black', '7', 'G7', 'G7');
-const blackPawnFive = new Pawn('black', '7', 'B7', 'B7');
-const blackPawnSix = new Pawn('black', '7', 'D7', 'D7');
-const blackPawnSeven = new Pawn('black', '7', 'F7', 'F7');
-const blackPawnEight = new Pawn('black', '7', 'H7', 'H7');
+const blackPawnOne = new Pawn(Data.name.Pawn,Data.color.black, Data.initialRow.pawn.blackPawns, Data.initialPosition.pawns.blackPawnOne, Data.icons.blackPawn);
+const blackPawnTwo = new Pawn(Data.name.Pawn,Data.color.black, Data.initialRow.pawn.blackPawns, Data.initialPosition.pawns.blackPawnTwo, Data.icons.blackPawn);
+const blackPawnThree = new Pawn(Data.name.Pawn,Data.color.black, Data.initialRow.pawn.blackPawns, Data.initialPosition.pawns.blackPawnThree, Data.icons.blackPawn);
+const blackPawnFour = new Pawn(Data.name.Pawn,Data.color.black, Data.initialRow.pawn.blackPawns, Data.initialPosition.pawns.blackPawnFour, Data.icons.blackPawn);
+const blackPawnFive = new Pawn(Data.name.Pawn,Data.color.black, Data.initialRow.pawn.blackPawns, Data.initialPosition.pawns.blackPawnFive, Data.icons.blackPawn);
+const blackPawnSix = new Pawn(Data.name.Pawn,Data.color.black, Data.initialRow.pawn.blackPawns, Data.initialPosition.pawns.blackPawnSix, Data.icons.blackPawn);
+const blackPawnSeven = new Pawn(Data.name.Pawn,Data.color.black, Data.initialRow.pawn.blackPawns, Data.initialPosition.pawns.blackPawnSeven, Data.icons.blackPawn);
+const blackPawnEight = new Pawn(Data.name.Pawn,Data.color.black, Data.initialRow.pawn.blackPawns, Data.initialPosition.pawns.blackPawnEight,Data.icons.blackPawn);
+
 
 //Torres blancas
 
-const witheRookOne = new Rook('white','1','A1','A1');
-const witheRookTwo = new Rook('white','1','H1','H1');
+const witheRookOne = new Rook(Data.name.Rook, Data.color.white, Data.initialRow.rooks.whiteRook, Data.initialPosition.rooks.whiteRookOne,  Data.icons.whiteRook);
+const witheRookTwo = new Rook(Data.name.Rook, Data.color.white, Data.initialRow.rooks.whiteRook, Data.initialPosition.rooks.whiteRookTwo,  Data.icons.whiteRook);
 
 //Torres negras
 
-const blackRookOne = new Rook('black','8','A8','A8');
-const blackRookTwo = new Rook('black','8','H8','H8')
+const blackRookOne = new Rook(Data.name.Rook, Data.color.black, Data.initialRow.rooks.blackRook, Data.initialPosition.rooks.blackRookOne,  Data.icons.blackRook);
+const blackRookTwo = new Rook(Data.name.Rook, Data.color.black, Data.initialRow.rooks.blackRook, Data.initialPosition.rooks.blackRookTwo,  Data.icons.blackRook);
 
-//Caballos blanco
+// //Caballos blanco
 
-const whiteKnightOne = new Knight('white','1','B1','B1');
-const whiteKnightTwo = new Knight('white','1','G1','G1');
+const whiteKnightOne = new Knight(Data.name.Knight, Data.color.white, Data.initialRow.knights.whiteKnight,Data.initialPosition.knights.whiteKnightOne, Data.icons.whiteKnight);
+const whiteKnightTwo = new Knight(Data.name.Knight, Data.color.white, Data.initialRow.knights.whiteKnight,Data.initialPosition.knights.whiteKnightTwo, Data.icons.whiteKnight);
 
-//Caballo negro
+// //Caballo negro
 
-const blackKnigthOne = new Knight('black','8','B8','B8');
-const blackKnigthTwo = new Knight('black','8','G8','G8');
+const blackKnigthOne = new Knight(Data.name.Knight, Data.color.white, Data.initialRow.knights.blackKing,Data.initialPosition.knights.blackKnightOne, Data.icons.blackKnight);
+const blackKnigthTwo = new Knight(Data.name.Knight, Data.color.white, Data.initialRow.knights.blackKing,Data.initialPosition.knights.blackKnightTwo, Data.icons.blackKnight);
 
-//Alfil blanco
+// //Alfil blanco
 
-const whiteBishopOne = new Bishop('white','1','C1','C1');
-const whiteBishopTwo = new Bishop('white','1','F1','F1');
+const whiteBishopOne = new Bishop(Data.name.Bishop,Data.color.white,Data.initialRow.bishops.witheBishop,Data.initialPosition.bishops.whiteBishopOne,Data.icons.whiteBishop);
+const whiteBishopTwo = new Bishop(Data.name.Bishop,Data.color.white,Data.initialRow.bishops.witheBishop,Data.initialPosition.bishops.whiteBishopTwo,Data.icons.whiteBishop);
 
-//Alfil Negro
+// //Alfil Negro
 
-const blackBishopOne = new Bishop('black','8','C8','C8');
-const blackBishopTwo = new Bishop('black','8','F8','F8');
+const blackBishopOne = new Bishop(Data.name.Bishop,Data.color.black,Data.initialRow.bishops.blackBishop,Data.initialPosition.bishops.blackBishopOne,Data.icons.blackBishop);
+const blackBishopTwo = new Bishop(Data.name.Bishop,Data.color.black,Data.initialRow.bishops.blackBishop,Data.initialPosition.bishops.blackBishopTwo,Data.icons.blackBishop);
 
-//Rey blanco
+// //Rey blanco
 
-const whiteKing = new King('white','1','D1','D1');
+const whiteKing = new King(Data.name.King,Data.color.white,Data.initialRow.king.whiteKing,Data.initialPosition.king.whiteKing,Data.icons.whiteKing);
 
-//Rey Negro
+// //Rey Negro
 
-const blackKing = new King('black','8','D8','D8');
+const blackKing = new King(Data.name.King,Data.color.black,Data.initialRow.king.blackKing,Data.initialPosition.king.blackKing,Data.icons.blackKing);
 
-//Reina blanca
+// //Reina blanca
 
-const whiteQueen = new Queen('white','1','E1','E1');
+const whiteQueen = new Queen (Data.name.Queen,Data.color.white,Data.initialRow.queen.whiteQueen,Data.initialPosition.queen.whiteQueen,Data.icons.whiteQueen);
 
-//Reina negra
+// //Reina negra
 
-const blackQueen = new Queen('black','8','E8','E8');
+const blackQueen = new Queen (Data.name.Queen,Data.color.black,Data.initialRow.queen.blackQuenn,Data.initialPosition.queen.blackQuenn,Data.icons.blackQueen);
 
 // Array de todas las piezas
 const allPieces = [
@@ -96,12 +102,18 @@ newBoard.pieceLocationOnBoard(allPieces);
 
 // Ejecutar método para validar y mover las piezas
 
-
-newBoard.executeIsValidMoveMethod();
-
+//newBoard.executeIsValidMoveMethod();
 
 
 
 
 
 
+
+//callAsyncMethods()
+
+// document.addEventListener('click',(event)=>{
+    
+//     newPiece.triggerMovement(newBoard?.filterPiece)
+    
+// })

@@ -1,15 +1,15 @@
 import Piece from "../pieceClass.mjs";
-import { data } from "../../../../Data/chessPieces.mjs";
+
 
 
 export default class Pawn extends Piece {
-    constructor(color, initialRow, initialPosition,actualPosition ){
+    constructor(name, color, initialRow, initialPosition,actualPosition,symbol ){
         
-        const pieceName = color === 'white'? data?.whitePawn: data?.blackPawn
-
+        
+        
         
 
-        super(color, pieceName, initialRow, initialPosition,actualPosition)
+        super(name,color, initialRow, initialPosition,actualPosition,symbol)
     }
     
 }
