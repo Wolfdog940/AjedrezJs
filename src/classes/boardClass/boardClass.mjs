@@ -19,7 +19,10 @@ export default class Board {
             nextBlackSquareNumber : 0,//parseInt(actualPositionArray[1]) - 1;
             nextSpecialBlackSquareNumber : 0, //parseInt(actualPositionArray[1]) - 2;
         };
+        
     };
+
+
 
     placeChessPieces(symbol, initialPosition) {
        let element = document.getElementById(initialPosition);
@@ -32,15 +35,20 @@ export default class Board {
         })
     };
 
-    pieceLocationOnBoard(allPieces) {
-        document.addEventListener('click', (event) => {
-            this.filterPiece = allPieces.find(piece => piece.initialPosition === event.target.id);
-            console.log('se ejecuta metodo 1')
-            console.log(this.filterPiece)
-            
-            
-        });
+    updateFilterPiece(allPieces,event) {
+       
+                this.filterPiece = allPieces.find(piece => piece.initialPosition === event.target.id);
+
+        
     };
+
+    initEventListeners(allPieces) {
+       
+        document.addEventListener('click', (event) => {
+            this.updateFilterPiece(allPieces,event);
+            this.isValidMoveForPiece();
+        });
+    }
 
     //  getNextPositionVariables(pieces){
 
@@ -75,89 +83,80 @@ export default class Board {
 
     //}
     
-    // isValidMoveForPiece(piece, hasMove, cellIsGreen, unicode) {
+     async isValidMoveForPiece() {
 
         
-    //     this.cheackIfIsGreen();
-    //     this.getNextPositionVariables(this.filterPiece);
+        //this.cheackIfIsGreen();
+       
 
-    //     let allowSpeciallMovement = [];
+        // let allowSpeciallMovement = [];
 
-    //     let actualPosition = this.filterPiece?.actualPosition
+        // let actualPosition = this.filterPiece?.actualPosition
 
-    //     let actualPositionArray = actualPosition.split('');
+        // let actualPositionArray = actualPosition.split('');
 
-    //     const totalRows = 8;
-    //     const totalCols = 8;
+        // const totalRows = 8;
+        // const totalCols = 8;
         
       
        
-    //     //Peon//
-    //     let nextWhiteSquareNumber = parseInt(actualPositionArray[1]) + 1;
-    //     let nextSpecialWhiteSquareNumber = parseInt(actualPositionArray[1]) + 2;
-    //     let nextBlackSquareNumber = parseInt(actualPositionArray[1]) - 1;
-    //     let nextSpecialBlackSquareNumber = parseInt(actualPositionArray[1]) - 2;
+        // //Peon//
+        // let nextWhiteSquareNumber = parseInt(actualPositionArray[1]) + 1;
+        // let nextSpecialWhiteSquareNumber = parseInt(actualPositionArray[1]) + 2;
+        // let nextBlackSquareNumber = parseInt(actualPositionArray[1]) - 1;
+        // let nextSpecialBlackSquareNumber = parseInt(actualPositionArray[1]) - 2;
 
-    //     let nextWhiteSquareComplete = actualPositionArray[0] + nextWhiteSquareNumber;
-    //     let specialWhiteSquareComplet = actualPositionArray[0] + nextSpecialWhiteSquareNumber;
-    //     let nextBlackSquareComplete = actualPositionArray[0] + nextBlackSquareNumber;
-    //     let specialBlackSquareComplet = actualPositionArray[0] + nextSpecialBlackSquareNumber;
+        // let nextWhiteSquareComplete = actualPositionArray[0] + nextWhiteSquareNumber;
+        // let specialWhiteSquareComplet = actualPositionArray[0] + nextSpecialWhiteSquareNumber;
+        // let nextBlackSquareComplete = actualPositionArray[0] + nextBlackSquareNumber;
+        // let specialBlackSquareComplet = actualPositionArray[0] + nextSpecialBlackSquareNumber;
 
-    //     //Torre/parseInt(actualPositionArray[1]) - (totalRows)
+        //Torre/parseInt(actualPositionArray[1]) - (totalRows)
         
 
 
-        
+        console.log(this.filterPiece)
         
 
 
-    //     switch (piece) {
-    //         case 'Pawn':
+        switch (this.filterPiece?.name) {
+            case 'panw':
                 
-    //             if (hasMove == false && cellIsGreen == false) {
+                if (this.filterPiece.hasMove == false && this.isGreen == false) {
                     
+                    console.log(this.filterPiece?.name)
+                   
+                }// si no es el primer movimiento solo se movera uno a delante y si tiene una ficha para comer se marcara en rojo 
+                //y si no se puede mover tb se marcara la propia ficha en rojo
+
+                break;
+            case 'rook':
+
+            if (this.filterPiece.hasMove == false && this.isGreen == false) {
                     
-    //                 if (this.filterPiece?.color == 'white') {
-    //                     allowSpeciallMovement = [nextWhiteSquareComplete, specialWhiteSquareComplet];
-    //                 } else {
-    //                     //para negro
-    //                     allowSpeciallMovement = [nextBlackSquareComplete, specialBlackSquareComplet];
-    //                 }
-    //                 console.log('se pinta de verde')
-    //                 allowSpeciallMovement.forEach(square => {
-    //                     let finalSquarePosition = document.getElementById(square);
-    //                     let initialPosition = document.getElementById(actualPosition)
-    //                     finalSquarePosition.style.background = 'lime';
-    //                     finalSquarePosition.style.border = '1px inset black';
-    //                     initialPosition.style.background = 'green';
-    //                     initialPosition.style.border = '1px inset black';
-    //                 });
-    //             }// si no es el primer movimiento solo se movera uno a delante y si tiene una ficha para comer se marcara en rojo 
-    //             //y si no se puede mover tb se marcara la propia ficha en rojo
-
-    //             break;
-    //         case 'Rook':
-
-    //             if(this.filterPiece?.color == 'white'){
-    //                 console.log(Math.abs(parseInt(actualPositionArray[1]) - (totalRows)))
-    //             }
-    //             break;
-    //         case 'Knight':
-    //             console.log('es un caballero');
-    //             break;
-    //         case 'Bishop':
-    //             console.log('es un alfil');
-    //             break;
-    //         case 'Queen':
-    //             console.log('es una Reina');
-    //             break;
-    //         case 'King':
-    //             console.log('es un Rey');
-    //             break;
-    //     };
+                console.log(this.filterPiece?.name)
+               
+            }
+                
+                //     console.log(Math.abs(parseInt(actualPositionArray[1]) - (totalRows)))
+                // }
+                break;
+            case 'Knight':
+                console.log('es un caballero');
+                break;
+            case 'Bishop':
+                console.log('es un alfil');
+                break;
+            case 'Queen':
+                console.log('es una Reina');
+                break;
+            case 'King':
+                console.log('es un Rey');
+                break;
+        };
         
         
-    // };
+    };
 
     // executeIsValidMoveMethod() {
         

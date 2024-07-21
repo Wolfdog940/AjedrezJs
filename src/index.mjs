@@ -8,7 +8,7 @@ import Piece from "./classes/piece/pieceClass.mjs";
 const newBoard = new Board();
 //const newPiece = new Piece();
 
-// Crear piezas
+
 // Peones blancos
 //name, color, initialRow, initialPosition,actualPosition,symbol
 const withePawnOne = new Pawn( Data.name.Pawn, Data.color.white, Data.initialRow.pawn.whitePawns, Data.initialPosition.pawns.withePawnOne,  Data.icons.whitePawn);
@@ -90,30 +90,12 @@ const allPieces = [
     blackBishopOne,blackBishopTwo,
     whiteKing,blackKing,
     whiteQueen,blackQueen
-
 ];
 
-// Ejecutar método para colocar piezas en el tablero
+//situar piezas en tablero
 newBoard.executePlaceChessPieces(allPieces);
 
-// Ejecutar método para ubicar las piezas en el tablero
-
-newBoard.pieceLocationOnBoard(allPieces);
-
-// Ejecutar método para validar y mover las piezas
-
-//newBoard.executeIsValidMoveMethod();
+//lanza eventos click
+newBoard.initEventListeners(allPieces)
 
 
-
-
-
-
-
-//callAsyncMethods()
-
-// document.addEventListener('click',(event)=>{
-    
-//     newPiece.triggerMovement(newBoard?.filterPiece)
-    
-// })
