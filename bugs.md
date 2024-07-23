@@ -1,0 +1,1 @@
+1- duplica el evento click de initEventListeners de la clase tabla

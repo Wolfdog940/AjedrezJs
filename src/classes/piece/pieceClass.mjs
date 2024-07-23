@@ -1,5 +1,3 @@
-
-
 export default class Piece {
     constructor(name, color, initialRow, initialPosition, symbol) {
         this.color = color;
@@ -19,37 +17,11 @@ export default class Piece {
         // Implementar lógica si es necesario
     }
 
-    Movements(piece, hasMove, isGreen) {
-        switch (piece) {
+    Movements(pieceName, hasMove, isGreen, piece) {
+        switch (pieceName) {
             case 'panw':
-                if (isGreen == false) {
-                    if (hasMove === false) {
-                        this.allowMovents.push(
-                            this.actualPosition.charAt(0) + 
-                            (parseInt(this.actualPosition.charAt(1)) + (hasMove === false ? 
-                            this.specialMovement : 
-                            this.normalMovement))
-                        );
-
-                        hasMove == false ? 
-                            this.allowMovents.push(
-                                this.actualPosition.charAt(0) + 
-                                (parseInt(this.actualPosition.charAt(1)) + this.normalMovement)
-                            ) : 
-                            null;
-                        
-                        document.getElementById(this.actualPosition).style.background = '#90EE90';
-        
-                        this.allowMovents.forEach(movent => {
-                            document.getElementById(movent).style.background = '#90EE90';
-                            console.log(this.allowMovents);
-                        });
-                    } else {
-                        document.getElementById(this.actualPosition).style.background = '#90EE90';
-                    }
-                }
+                piece.pawnMovements(hasMove, isGreen, this.allowMovents);
                 break;
-
             case 'rook':
                 // Implementar lógica para la torre
                 break;
